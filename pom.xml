@@ -144,65 +144,14 @@
  </plugin>
  
  <plugin>
-
-<groupId>org.eclipse.jetty</groupId>
-
-<artifactId>jetty-maven-plugin</artifactId>
-
-<version>9.3.0.v20150612</version>
-
-<configuration>
-
-<scanIntervalSeconds>10</scanIntervalSeconds>
-
-<httpConnector>
-
-<port>${jetty.port}</port>
-
-<idleTimeout>60000</idleTimeout>
-
-</httpConnector>
-
-<stopKey>foo</stopKey>
-
-<stopPort>${jetty.stop.port}</stopPort>
-
-</configuration>
-
-</plugin>
-
-<plugin>
-
-<artifactId>maven-war-plugin</artifactId>
-
-<version>2.1.1</version>
-
-<configuration>
-
-	<failOnMissingWebXml>false</failOnMissingWebXml>
-<manifest>
-
-<addDefaultImplementationEntries>true</addDefaultImplementationEntries>
-
-</manifest>
-
-<archive>
-
-<manifestEntries>
-
-<Specification-Title>${project.name}</Specification-Title>
-
-<Specification-Version>${project.version}</Specification-Version>
-
-<Implementation-Version>${BUILD_TAG}</Implementation-Version>
-
-</manifestEntries>
-
-</archive>
-
-</configuration>
-
-</plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-war-plugin</artifactId>
+                </plugin>
+            <plugin>
+                <groupId>org.eclipse.jetty</groupId>
+                <artifactId>jetty-maven-plugin</artifactId>
+                <version>9.4.14.v20181114</version>
+            </plugin>
 
 <plugin>
 
