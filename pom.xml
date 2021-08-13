@@ -179,7 +179,7 @@
 
 <configuration>
 
-<failOnMissingWebXml>false</failOnMissingWebXml>
+	<failOnMissingWebXml>false</failOnMissingWebXml>
 <manifest>
 
 <addDefaultImplementationEntries>true</addDefaultImplementationEntries>
