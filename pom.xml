@@ -31,10 +31,10 @@
 	</distributionManagement>
 	
 <scm>
-<connection>scm:git:git@github.com:krishnamurthypradeep/devopsinfrastructure.git</connection>
-<developerConnection>scm:git:git@github.com:krishnamurthypradeep/devop
+<connection>scm:git:git@github.com:HarshaPuthussery/devopsinfrastructure.git</connection>
+<developerConnection>scm:git:git@github.com:HarshaPuthussery/devop
 s-infrastructure.git</developerConnection>
-<url>git@github.com:krishnamurthypradeep/devopsinfrastructure.git</url>
+<url>git@github.com:HarshaPuthussery/devopsinfrastructure.git</url>
 <tag>v0.0.1</tag>
 </scm>
 	
