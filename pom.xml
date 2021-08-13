@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
 		<version>2.5.3</version>
-		<relativePath/> <!-- lookup parent from repository -->
+		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>product-app</groupId>
 	<artifactId>product-app</artifactId>
@@ -16,34 +17,32 @@
 	<description>Demo project for Spring Boot</description>
 	<properties>
 		<java.version>1.8</java.version>
+		<thucydides.version>1.8.4</thucydides.version>
 		<jetty.port>9090</jetty.port>
-
 		<jetty.stop.port>9999</jetty.stop.port>
-	<thucydides.version>1.8.4</thucydides.version>
 	</properties>
-	
+
 	<distributionManagement>
-	<repository>
-	
-		<id>release</id>
-		<name>releases</name>
-		<url>http://localhost:8081/artifactory/libsrelease-local</url>
+		<repository>
+			<id>release</id>
+			<name>releases</name>
+			<url>http://localhost:8081/artifactory/libs-release-local</url>
 		</repository>
 		<snapshotRepository>
-		<id>snapshot</id>
-		<name>snapshots</name>
-		<url>http://localhost:8081/artifactory/libssnapshot-local</url>
+			<id>snapshot</id>
+			<name>snapshots</name>
+			<url>http://localhost:8081/artifactory/libs-snapshot-local</url>
 		</snapshotRepository>
 	</distributionManagement>
-	
-<scm>
-<connection>scm:git:git@github.com:HarshaPuthussery/product-app.git</connection>
-<developerConnection>scm:git:git@github.com:HarshaPuthussery/product-app.git</developerConnection>
-<url>git@github.com:HarshaPuthussery/product-app.git</url>
-<tag>v0.0.1</tag>
-</scm>
-	
-	
+
+	<scm>
+		<connection>scm:git:git@github.com:DebjotiMallick/product-app.git</connection>
+		<developerConnection>scm:git:git@github.com:DebjotiMallick/product-app.git</developerConnection>
+		<url>git@github.com:DebjotiMallick/product-app.git</url>
+		<tag>v0.0.1</tag>
+	</scm>
+
+
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -61,18 +60,21 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
 			<exclusions>
-                <exclusion>
-                    <groupId>org.springframework.boot</groupId>
-                    <artifactId>spring-boot-starter-tomcat</artifactId>
-                </exclusion>
-            </exclusions>
-		
+				<exclusion>
+					<groupId>org.springframework.boot</groupId>
+					<artifactId>spring-boot-starter-tomcat</artifactId>
+				</exclusion>
+			</exclusions>
 		</dependency>
-		<dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-jetty</artifactId>
-            <scope>provided</scope>
-        </dependency>
+
+		 <dependency> <groupId>org.springframework.boot</groupId> <artifactId>spring-boot-starter-jetty</artifactId> 
+			<scope>provided</scope> </dependency> 
+
+<!-- 	<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>javax.servlet-api</artifactId>
+			<scope>provided</scope>
+		</dependency> -->	
 
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -98,101 +100,63 @@
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
-			
 			<plugin>
-<groupId>org.apache.maven.plugins</groupId>
-<artifactId>maven-releaseplugin</artifactId>
-<version>3.0.0-M1</version>
-<configuration>
-<tagNameFormat>v@{project.version}</tagNameFormat>
-<autoVersionSubmodules>true</autoVersionSubmodules>
-</configuration>
-</plugin>
- <plugin>
- <groupId>org.jacoco</groupId>
- <artifactId>jacoco-maven-plugin</artifactId>
- <version>0.8.6</version>
- <executions>
- <execution>
- <id>default-prepare-agent</id>
- <goals>
- <goal>prepare-agent</goal>
- </goals>
- </execution>
- <execution>
- <id>default-report</id>
- <goals>
- <goal>report</goal>
- </goals>
- </execution>
- <execution>
- <id>default-check</id>
- <goals>
- <goal>check</goal>
- </goals>
- <configuration>
- <rules>
- <rule>
- <element>BUNDLE</element>
- <limits>
- <limit>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-release-plugin</artifactId>
+				<version>3.0.0-M1</version>
+				<configuration>
+					<tagNameFormat>v@{project.version}</tagNameFormat>
+					<autoVersionSubmodules>true</autoVersionSubmodules>
+				</configuration>
+			</plugin>
 
-<counter>COMPLEXITY</counter>
-<value>COVEREDRATIO</value>
- <minimum>0.20</minimum>
- </limit>
- </limits>
- </rule>
- </rules>
- </configuration>
- </execution>
- </executions>
- <configuration>
- <excludes>
 
-<exclude>com/eldisol/jacoboot/JacobootApplication.class</exclude>
- </excludes>
- </configuration>
- </plugin>
- 
- <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-war-plugin</artifactId>
-                </plugin>
-            <plugin>
-                <groupId>org.eclipse.jetty</groupId>
-                <artifactId>jetty-maven-plugin</artifactId>
-                <version>9.4.14.v20181114</version>
-            </plugin>
-
-<plugin>
-
-<groupId>net.serenity-bdd.maven.plugins</groupId>
-
-<artifactId>serenity-maven-plugin</artifactId>
-
-<version>${thucydides.version}</version>
-
-<executions>
-
-<execution>
-
-<id>serenity-reports</id>
-
-<phase>post-integration-test</phase>
-
-<goals>
-
-<goal>aggregate</goal>
-
-</goals>
-
-</execution>
-
-</executions>
-
-</plugin>
+			<plugin>
+				<groupId>org.jacoco</groupId>
+				<artifactId>jacoco-maven-plugin</artifactId>
+				<version>0.8.6</version>
+				<executions>
+					<execution>
+						<id>default-prepare-agent</id>
+						<goals>
+							<goal>prepare-agent</goal>
+						</goals>
+					</execution>
+					<execution>
+						<id>default-report</id>
+						<goals>
+							<goal>report</goal>
+						</goals>
+					</execution>
+					<execution>
+						<id>default-check</id>
+						<goals>
+							<goal>check</goal>
+						</goals>
+						<configuration>
+							<rules>
+								<rule>
+									<element>BUNDLE</element>
+									<limits>
+										<limit>
+											<counter>COMPLEXITY</counter>
+											<value>COVEREDRATIO</value>
+											<minimum>0.20</minimum>
+										</limit>
+									</limits>
+								</rule>
+							</rules>
+						</configuration>
+					</execution>
+				</executions>
+				<configuration>
+					<excludes>
+						<exclude>com/eldisol/jacoboot/JacobootApplication.class</exclude>
+					</excludes>
+				</configuration>
+			</plugin>
+			
+						
 		</plugins>
 	</build>
-
 </project>
