@@ -31,9 +31,9 @@ HikariDataSource dataSource = new HikariDataSource();
 
         dataSource.setJdbcUrl("jdbc:mysql://localhost:3306/devops");
 
-        dataSource.setUsername("admin");
+        dataSource.setUsername("root");
 
-        dataSource.setPassword("admin");
+        dataSource.setPassword("root");
 
         return dataSource;
 
