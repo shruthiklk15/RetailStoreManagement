@@ -9,7 +9,7 @@
 	</parent>
 	<groupId>product-app</groupId>
 	<artifactId>product-app</artifactId>
-	<version>0.0.2</version>
+	<version>0.0.3-SNAPSHOT</version>
 	<name>product-app</name>
 	<packaging>war</packaging>
 	<description>Demo project for Spring Boot</description>
@@ -37,7 +37,7 @@
 		<connection>scm:git:git@github.com:HarshaPuthussery/product-app.git</connection>
 		<developerConnection>scm:git:git@github.com:HarshaPuthussery/product-app.git</developerConnection>
 		<url>git@github.com:HarshaPuthussery/product-app.git</url>
-		<tag>v0.0.2</tag>
+		<tag>v0.0.1</tag>
 	</scm>
 
 
