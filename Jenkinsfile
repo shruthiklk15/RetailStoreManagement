@@ -29,7 +29,7 @@ node {
 
 
 	stage('Deploy') {
-		sh 'curl -u admin:admin -T target/**.war "http://localhost:9080/manager/text/deploy?path=/ibmdevops&update=true";
+		sh 'curl -u jenkins:jenkins -T target/**.war "http://localhost:5050/manager/text/deploy?path=/ibmdevops&update=true"'
 	}
 
 	stage("Smoke Test"){
