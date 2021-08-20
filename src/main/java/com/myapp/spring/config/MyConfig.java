@@ -10,37 +10,22 @@ import org.springframework.stereotype.Component;
 
 import com.zaxxer.hikari.HikariDataSource;
 
-
-
-
 @Component
 
 public class MyConfig {
-
-
 
 @Bean
 
     public DataSource dataSource() {
 
-       
-
 HikariDataSource dataSource = new HikariDataSource();
 
         dataSource.setDriverClassName("com.mysql.cj.jdbc.Driver");
-
         dataSource.setJdbcUrl("jdbc:mysql://localhost:3306/devops");
-
         dataSource.setUsername("root");
-
         dataSource.setPassword("root");
 
         return dataSource;
-
         
     }
-
-
-
-
 }
