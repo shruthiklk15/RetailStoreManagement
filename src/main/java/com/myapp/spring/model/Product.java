@@ -11,7 +11,7 @@ import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 
 @Entity
-@Table(name="devopsproducts")
+@Table(name="products")
 public class Product {
 
 	@Id
