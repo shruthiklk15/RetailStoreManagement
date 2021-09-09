@@ -2,7 +2,7 @@ spring:
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
     url: jdbc:mysql://localhost:3306/retail
-    username: chaya
+    username: root
     password: root
     hikari:
       auto-commit: false
@@ -12,4 +12,4 @@ spring:
       ddl-auto: update
     show-sql: true
 
-server:  port: 9990    
+server:  port: 9999    
